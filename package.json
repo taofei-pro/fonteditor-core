@@ -1,6 +1,6 @@
 {
-  "name": "fonteditor-core",
-  "version": "2.1.8",
+  "name": "fonteditor-core-mod",
+  "version": "2.1.8-mod.1",
   "description": "fonts (ttf, woff, woff2, eot, svg, otf) parse, write, transform, glyph adjust.",
   "keywords": [
     "sfnt",
@@ -13,24 +13,24 @@
     "eot",
     "otf"
   ],
-  "homepage": "https://github.com/kekee000/fonteditor-core",
+  "homepage": "https://github.com/taofei-pro/fonteditor-core",
   "authors": [
+    {
+      "name": "taofei-pro",
+      "email": "taofei0309@gmail.com"
+    },
     {
       "name": "kekee000",
       "email": "kekee000@gmail.com"
-    },
-    {
-      "name": "junmer",
-      "email": "junmer@foxmail.com"
     }
   ],
   "bugs": {
-    "url": "https://github.com/kekee000/fonteditor-core/issues"
+    "url": "https://github.com/taofei-pro/fonteditor-core/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/kekee000/fonteditor-core/raw/master/LICENSE"
+      "url": "https://github.com/taofei-pro/fonteditor-core/raw/master/LICENSE"
     }
   ],
   "scripts": {
@@ -58,7 +58,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kekee000/fonteditor-core.git"
+    "url": "git://github.com/taofei-pro/fonteditor-core.git"
   },
   "files": [
     "index.d.ts",
