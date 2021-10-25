@@ -20,8 +20,8 @@ import ttf2eot from './ttf2eot';
 import ttf2woff from './ttf2woff';
 import ttf2svg from './ttf2svg';
 import ttf2symbol from './ttf2symbol';
-import ttftowoff2 from './ttftowoff2';
-import woff2tottf from './woff2tottf';
+// import ttftowoff2 from './ttftowoff2';
+// import woff2tottf from './woff2tottf';
 
 import ttf2base64 from './ttf2base64';
 import eot2base64 from './eot2base64';
@@ -46,7 +46,7 @@ export default class Font {
      * @param {ArrayBuffer|Buffer|string} buffer  字体数据
      * @param {Object} options  读取参数
      */
-    constructor(buffer, options = {type: 'ttf'}) {
+    constructor(buffer, options = { type: 'ttf' }) {
         // 字形对象
         if (typeof buffer === 'object' && buffer.glyf) {
             this.set(buffer);
@@ -111,10 +111,10 @@ export default class Font {
             buffer = woff2ttf(buffer, options);
             this.data = new TTFReader(options).read(buffer);
         }
-        else if (options.type === 'woff2') {
-            buffer = woff2tottf(buffer, options);
-            this.data = new TTFReader(options).read(buffer);
-        }
+        // else if (options.type === 'woff2') {
+        //     buffer = woff2tottf(buffer, options);
+        //     this.data = new TTFReader(options).read(buffer);
+        // }
         else if (options.type === 'svg') {
             this.data = svg2ttfobject(buffer, options);
         }
@@ -160,10 +160,10 @@ export default class Font {
             buffer = new TTFWriter(options).write(this.data);
             buffer = ttf2woff(buffer, options);
         }
-        else if (options.type === 'woff2') {
-            buffer = new TTFWriter(options).write(this.data);
-            buffer = ttftowoff2(buffer, options);
-        }
+        // else if (options.type === 'woff2') {
+        //     buffer = new TTFWriter(options).write(this.data);
+        //     buffer = ttftowoff2(buffer, options);
+        // }
         else if (options.type === 'svg') {
             buffer = ttf2svg(this.data, options);
         }
