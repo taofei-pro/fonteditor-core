@@ -6,8 +6,8 @@
 import glyFlag from '../../enum/glyFlag';
 import componentFlag from '../../enum/componentFlag';
 
-const MAX_INSTRUCTION_LENGTH = 5000; // 设置instructions阈值防止读取错误
-const MAX_NUMBER_OF_COORDINATES = 20000; // 设置坐标最大个数阈值，防止glyf读取错误
+const MAX_INSTRUCTION_LENGTH = 20000; // 设置instructions阈值防止读取错误
+const MAX_NUMBER_OF_COORDINATES = 40000; // 设置坐标最大个数阈值，防止glyf读取错误
 
 /**
  * 读取简单字形

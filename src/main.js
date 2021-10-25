@@ -19,12 +19,12 @@ import OTFReader from './ttf/otfreader';
 import otf2ttfobject from './ttf/otf2ttfobject';
 import ttf2base64 from './ttf/ttf2base64';
 import ttf2icon from './ttf/ttf2icon';
-import ttftowoff2 from './ttf/ttftowoff2';
-import woff2tottf from './ttf/woff2tottf';
-import woff2 from '../woff2/index';
+// import ttftowoff2 from './ttf/ttftowoff2';
+// import woff2tottf from './ttf/woff2tottf';
+// import woff2 from '../woff2/index';
 
-export {Font};
-export {woff2};
+export { Font };
+// export {woff2};
 
 const modules = {
     Font,
@@ -43,9 +43,9 @@ const modules = {
     otf2ttfobject,
     ttf2base64,
     ttf2icon,
-    ttftowoff2,
-    woff2tottf,
-    woff2
+    // ttftowoff2,
+    // woff2tottf,
+    // woff2
 };
 
 export default modules;
