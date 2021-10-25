@@ -1,6 +1,6 @@
 {
   "name": "fonteditor-core-mod",
-  "version": "2.1.8-mod.3",
+  "version": "2.1.8-mod.4",
   "description": "fonts (ttf, woff, woff2, eot, svg, otf) parse, write, transform, glyph adjust.",
   "keywords": [
     "sfnt",
