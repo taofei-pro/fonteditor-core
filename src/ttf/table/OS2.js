@@ -198,30 +198,33 @@ export default table.create(
                 }
 
                 // 统计边界信息
-                if (glyf.xMin < xMin) {
-                    xMin = glyf.xMin;
+                if (glyf.compound || glyf.contours && glyf.contours.length) {
+
+                    if (glyf.xMin < xMin) {
+                        xMin = glyf.xMin;
+                    }
+
+                    if (glyf.yMin < yMin) {
+                        yMin = glyf.yMin;
+                    }
+
+                    if (glyf.xMax > xMax) {
+                        xMax = glyf.xMax;
+                    }
+
+                    if (glyf.yMax > yMax) {
+                        yMax = glyf.yMax;
+                    }
+
+                    advanceWidthMax = Math.max(advanceWidthMax, glyf.advanceWidth);
+                    minLeftSideBearing = Math.min(minLeftSideBearing, glyf.leftSideBearing);
+                    minRightSideBearing = Math.min(minRightSideBearing, glyf.advanceWidth - glyf.xMax);
+                    xMaxExtent = Math.max(xMaxExtent, glyf.xMax);
+
+                    xAvgCharWidth += glyf.advanceWidth;
+
+                    glyfNotEmpty++;
                 }
-
-                if (glyf.yMin < yMin) {
-                    yMin = glyf.yMin;
-                }
-
-                if (glyf.xMax > xMax) {
-                    xMax = glyf.xMax;
-                }
-
-                if (glyf.yMax > yMax) {
-                    yMax = glyf.yMax;
-                }
-
-                advanceWidthMax = Math.max(advanceWidthMax, glyf.advanceWidth);
-                minLeftSideBearing = Math.min(minLeftSideBearing, glyf.leftSideBearing);
-                minRightSideBearing = Math.min(minRightSideBearing, glyf.advanceWidth - glyf.xMax);
-                xMaxExtent = Math.max(xMaxExtent, glyf.xMax);
-
-                xAvgCharWidth += glyf.advanceWidth;
-
-                glyfNotEmpty++;
 
                 let unicodes = glyf.unicode;
 
@@ -264,7 +267,7 @@ export default table.create(
 
             // head rewrite
             if (ttf.support.head) {
-                const {xMin, yMin, xMax, yMax} = ttf.support.head;
+                const { xMin, yMin, xMax, yMax } = ttf.support.head;
                 if (xMin != null) {
                     ttf.head.xMin = xMin;
                 }
@@ -281,7 +284,7 @@ export default table.create(
             }
             // hhea rewrite
             if (ttf.support.hhea) {
-                const {advanceWidthMax, xMaxExtent, minLeftSideBearing, minRightSideBearing} = ttf.support.hhea;
+                const { advanceWidthMax, xMaxExtent, minLeftSideBearing, minRightSideBearing } = ttf.support.hhea;
                 if (advanceWidthMax != null) {
                     ttf.hhea.advanceWidthMax = advanceWidthMax;
                 }

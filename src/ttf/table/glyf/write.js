@@ -17,6 +17,11 @@ export default function write(writer, ttf) {
     const hinting = ttf.writeOptions ? ttf.writeOptions.hinting : false;
     ttf.glyf.forEach((glyf, index) => {
 
+        // 非复合图元没有轮廓则不写
+        if (!glyf.compound && (!glyf.contours || 0 === glyf.contours.length)) {
+            return;
+        }
+
         // header
         writer.writeInt16(glyf.compound ? -1 : (glyf.contours || []).length);
         writer.writeInt16(glyf.xMin);

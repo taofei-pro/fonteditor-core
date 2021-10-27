@@ -15,6 +15,10 @@ import glyFlag from '../../enum/glyFlag';
  */
 function sizeofSimple(glyf, glyfSupport, hinting) {
 
+    if (!glyf.contours || 0 === glyf.contours.length) {
+        return 0;
+    }
+
     // fixed header + endPtsOfContours
     let result = 12
         + (glyf.contours || []).length * 2
