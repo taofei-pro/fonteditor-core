@@ -120,8 +120,8 @@ export default table.create(
                 }
                 else {
                     const glyf = ttf.glyf[i];
-                    const unicode = glyf.unicode ? glyf.unicode[0] : 0;
-                    const unicodeNameIndex = unicodeName[unicode];
+                    const unicode = glyf.unicode ? glyf.unicode[0] : undefined;
+                    const unicodeNameIndex = unicode !== undefined ? unicodeName[unicode] : undefined;
                     if (undefined !== unicodeNameIndex) {
                         nameIndexArr.push(unicodeNameIndex);
                     }
