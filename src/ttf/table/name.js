@@ -4,10 +4,10 @@
  */
 
 import table from './table';
-import nameIdTbl from '../enum/nameId';
-import string from '../util/string';
-import platformTbl from '../enum/platform';
-import {mac, win} from '../enum/encoding';
+// import nameIdTbl from '../enum/nameId';
+// import string from '../util/string';
+// import platformTbl from '../enum/platform';
+// import {mac, win} from '../enum/encoding';
 
 export default table.create(
     'name',
